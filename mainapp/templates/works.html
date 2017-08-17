@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+  work
+{% endblock %}
+
+{% block style_block %}
+  #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+  #section2 {padding-top:50px;height:700px;color: #fff; background-color: #673ab7;}
+  #section3 {padding-top:50px;height:700px;color: #fff; background-color: #ff9800;}
+  #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+  #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+{% endblock %}
+
+{% block content %}
+<div id="section3" class="container-fluid">
+  <h1>Works</h1>
+  {% if not works %}
+    <div class="block">
+      Я еще нигде не работал
+    </div>
+  {% endif %}
+
+  <div class="container">
+    <div class="row">
+      {% for work in works %}
+      <div class="col-sm-4">
+        <h3>Work: {{work.name}}</h3>
+        <a href='{{work.email}}' target="_blank">
+          <p>Plase of work: {{work.name}}</p>
+        </a>
+        <p>
+          The post: {{work.post}}
+        </p>
+        <p>
+          Type of activity: {{work.desc}}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

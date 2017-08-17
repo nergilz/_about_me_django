@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+  index
+{% endblock %}
+
+  {% block style_block %}
+      #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+      #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
+      #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+      #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+      #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+  {% endblock %}
+
+  {% block inform_menu_for_index %}
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> Information <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#section41">Project</a></li>
+        <li><a href="#section42">Contacts</a></li>
+      </ul>
+    </li>
+  {% endblock %}
+
+{% block content %}
+
+<div id="section1" class="container-fluid">
+    <h1>About me</h1>
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Foto</h3>
+            <img src="{% static 'img/my_foto.jpg' %}" class="img-rounded" alt="Cinque Terre" width="228" height="177">
+        </div>
+
+        <div class="col-sm-6">
+            <h3>Information</h3>
+                    <p>Name: {{name}} {{surname}}</p>
+                    <p>Year of birth: {{birthday.day}} {{birthday.month}} {{birthday.year}}</p>
+                    <p>Education: University</p>
+        </div>
+      </div>
+</div>
+
+<div id="section41" class="container-fluid">
+    <h1>Projects</h1>
+        <h2>Links to current projects</h2>
+                <button type="button" class="btn">Basic</button>
+                <button type="button" class="btn btn-default">Default</button>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-link">Link</button>
+</div>
+
+<div id="section42" class="container-fluid">
+    <h1>Contacts</h1>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="focusedInput" type="text">
+        </div>
+      </div>
+      <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">e-mail</label>
+        <div class="col-sm-10">
+          <input class="form-control" id="focusedInput" type="text">
+        </div>
+      </div>
+    <p>contact us...</p>
+</div>
+
+{% endblock %}

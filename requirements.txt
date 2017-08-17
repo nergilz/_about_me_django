@@ -1,0 +1,9 @@
+Django 1.8.x
+Python 3.5.x
+
+Run > python manage.py runserver
+Run site > http://127.0.01:8000
+Run page-admin > http://127.0.01:8000/admin/
+
+username: admin
+password: adminadmin

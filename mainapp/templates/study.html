@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}
+  study
+{% endblock %}
+
+{% block style_block %}
+    #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+    #section2 {padding-top:50px;height:700px;color: #fff; background-color: #40E0D0;}
+    #section3 {padding-top:50px;height:700px;color: #fff; background-color: #ff9800;}
+    #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+    #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+{% endblock %}
+
+{% block content %}
+
+<div id="section2" class="container-fluid">
+  <h1>Study</h1>
+  <h2>GeekBreins</h2>
+  {% if not studys %}
+    <div class="block">
+      Я еще нигде не учился
+    </div>
+  {% endif %}
+
+  <div class="container">
+    <div class="row">
+    {% for study in studys %}
+      <div class="col-sm-4">
+        <h3>Study: {{study.name}}</h3>
+        <a href='{{study.email}}' target="_blank">
+          <p>
+            Plase of study: {{study.name}}
+          </p>
+        </a>
+        <p>
+          Type of activity: {{study.post}}
+        </p>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

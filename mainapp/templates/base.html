@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <title>
+      {% block title %}Base{% endblock %}
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    body {
+      position: relative;
+    }
+    {% block style_block %}
+    {% endblock %}
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Personal_Bloge</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="/">About</a></li>
+          <li><a href="/study">Study</a></li>
+          <li><a href="/works">Works</a></li>
+            {% block inform_menu_for_index %}
+            {% endblock %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<div class="modal-footer">
+  <p> &copy; &laquo; {% now "Y" %} All_rights_reserved &raquo; </p>
+</div>
+
+</body>
+</html>
